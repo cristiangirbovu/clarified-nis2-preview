@@ -196,14 +196,14 @@
 
 .nis2-news li {
   display: grid;
-  grid-template-columns: 76px minmax(0, 1fr);
+  grid-template-columns: 34px minmax(0, 1fr);
   gap: 14px;
   padding: 15px 0;
   border-top: 1px solid rgba(255, 255, 255, .13);
 }
 
-.nis2-news time {
-  color: #fff;
+.nis2-news-k {
+  color: var(--gold);
   font-family: "DM Serif Display", Georgia, serif;
   font-size: 1.14rem;
   line-height: 1.25;
@@ -222,11 +222,6 @@
   color: rgba(255, 255, 255, .76);
   font-size: .9rem;
   line-height: 1.5;
-}
-
-.nis2-news .is-key time,
-.nis2-news .is-key strong {
-  color: var(--gold);
 }
 
 @container nis2 (min-width: 940px) {
@@ -255,7 +250,7 @@
   }
 
   .nis2-news li {
-    grid-template-columns: 64px minmax(0, 1fr);
+    grid-template-columns: 30px minmax(0, 1fr);
     gap: 10px;
   }
 }
@@ -371,14 +366,37 @@
   line-height: 1.25;
 }
 
-.nis2-card p.nis2-fine {
-  margin-top: 20px;
-  padding: 12px 14px;
+.nis2-card p + p {
+  margin-top: 12px;
+}
+
+.nis2-notes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.nis2-note {
+  min-width: 0;
+  padding: 13px 15px;
   border-left: 3px solid var(--gold);
   border-radius: 0 10px 10px 0;
   background: #faf7ee;
+}
+
+.nis2-note strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--ink);
+  font-size: .86rem;
+  font-weight: 800;
+}
+
+.nis2-note p {
   color: var(--ink-soft);
-  font-size: .93rem;
+  font-size: .9rem;
+  line-height: 1.55;
 }
 
 .nis2-after {
@@ -462,6 +480,10 @@
   line-height: 1.6;
 }
 
+.nis2-timeline p + p {
+  margin-top: 8px;
+}
+
 .nis2-timeline p.nis2-cite {
   margin-top: 8px;
 }
@@ -484,6 +506,40 @@
   letter-spacing: .14em;
   line-height: 1.4;
   text-transform: uppercase;
+}
+
+.nis2-figures-lead {
+  margin: 10px 0 0;
+  color: #fff;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 1.36rem;
+  line-height: 1.2;
+}
+
+.nis2-figures ul {
+  margin: 16px 0 6px;
+  padding: 0;
+  list-style: none;
+}
+
+.nis2-figures li {
+  position: relative;
+  padding: 11px 0 11px 22px;
+  border-top: 1px solid rgba(255, 255, 255, .14);
+  color: rgba(255, 255, 255, .9);
+  font-size: .97rem;
+  line-height: 1.4;
+}
+
+.nis2-figures li::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 2px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
 }
 
 .nis2-figures dl {
@@ -551,7 +607,7 @@
   display: block;
   color: var(--gold);
   font-family: "DM Serif Display", Georgia, serif;
-  font-size: clamp(1.7rem, 3.4cqi, 2.3rem);
+  font-size: clamp(1.5rem, 2.9cqi, 1.9rem);
   font-weight: 400;
   line-height: 1.08;
 }
@@ -666,6 +722,14 @@
 .nis2-steps-cta span {
   color: var(--muted);
   font-size: .96rem;
+}
+
+.nis2-steps-note {
+  max-width: 78ch;
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: .92rem;
+  line-height: 1.6;
 }
 
 @container nis2 (min-width: 640px) {
